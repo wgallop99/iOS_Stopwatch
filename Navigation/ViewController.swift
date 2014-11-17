@@ -9,15 +9,47 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    
+    @IBOutlet weak var time: UILabel!
+    
+    var timer = NSTimer()
+    var count = 0
+    
+    @IBAction func Pause(sender: AnyObject) {
+        timer.invalidate()
+        count = 0
+        time.text = "0"
+        
+    }
+    
+    
+    @IBAction func Play(sender: AnyObject) {
+        
+        
+    }
 
+    @IBAction func Reset(sender: AnyObject) {
+        
+        
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        var timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("result"), userInfo: nil, repeats: true)
+    timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("result"), userInfo: nil, repeats: true)
         
         println("test")
         
+    }
+    
+    func result() {
+        
+        count++
+        time.text = String(count)
+    
     }
 
     override func didReceiveMemoryWarning() {

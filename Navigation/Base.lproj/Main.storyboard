@@ -16,28 +16,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nH9-xY-hzQ">
-                                <rect key="frame" x="-56" y="14" width="712" height="44"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRV-rW-tho">
+                                <rect key="frame" x="169" y="66" width="90" height="89"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="66"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FyF-cD-juP">
+                                <rect key="frame" x="0.0" y="218" width="600" height="44"/>
                                 <items>
-                                    <navigationItem title="Title" id="Egg-ne-4au">
-                                        <barButtonItem key="leftBarButtonItem" title="Item" id="zys-q7-y2M">
-                                            <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Item" id="zol-dR-cYJ"/>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U2M-dq-VYW">
-                                <rect key="frame" x="0.0" y="519" width="600" height="44"/>
-                                <items>
-                                    <barButtonItem title="Item" id="rpk-HC-0eU"/>
-                                    <barButtonItem width="494" style="plain" systemItem="fixedSpace" id="20G-Jf-fq7"/>
-                                    <barButtonItem title="Item" id="iyn-EO-vQ7"/>
+                                    <barButtonItem systemItem="play" id="sie-Vn-PXS">
+                                        <connections>
+                                            <action selector="Play:" destination="vXZ-lx-hvc" id="eiQ-sm-Huq"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="166" style="plain" systemItem="fixedSpace" id="Yl2-LS-XdH"/>
+                                    <barButtonItem systemItem="pause" id="Qq9-Pw-b7x">
+                                        <connections>
+                                            <action selector="Pause:" destination="vXZ-lx-hvc" id="t49-wr-alo"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="148" style="plain" systemItem="fixedSpace" id="5k0-2o-UOj"/>
+                                    <barButtonItem title="reset" id="ohU-g8-348">
+                                        <connections>
+                                            <action selector="Reset:" destination="vXZ-lx-hvc" id="Oq5-Sa-cDA"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nH9-xY-hzQ">
+                                <rect key="frame" x="-142" y="14" width="712" height="44"/>
+                                <items>
+                                    <navigationItem title="Stopwatch" id="FRD-Kq-Wjc"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="Number" destination="eRV-rW-tho" id="P5A-YS-Frd"/>
+                        <outlet property="Play" destination="FyF-cD-juP" id="cub-rb-WkE"/>
+                        <outlet property="time" destination="eRV-rW-tho" id="XeN-Dr-xSL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
