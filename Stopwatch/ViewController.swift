@@ -18,19 +18,21 @@ class ViewController: UIViewController {
     
     @IBAction func Pause(sender: AnyObject) {
         timer.invalidate()
-        count = 0
-        time.text = "0"
         
     }
     
     
     @IBAction func Play(sender: AnyObject) {
+        timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("result"), userInfo: nil, repeats: true)
         
+        println("test")
         
     }
 
     @IBAction func Reset(sender: AnyObject) {
-        
+        timer.invalidate()
+        count = 0
+        time.text = "0"
         
     }
     
